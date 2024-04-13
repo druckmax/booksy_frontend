@@ -1,11 +1,53 @@
-# React + Vite
+# Booksy Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Booksy is a lightweight E-Commerce platform developed as the final project during the 1-year full-stack web development course at DCI. This repository serves as the frontend component of the Booksy application, catering specifically to the needs of a small independent bookstore.
 
-Currently, two official plugins are available:
+![Preview](./public/ReadmeImage.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# bookstore_frontend
-# bookstore_frontend
-# booksy_frontend
+## Technologies
+
+Booksy aims to keep dependencies low while still providing essential features for managing an online bookstore.
+
+- Bootstrapped with Vite
+- React
+- React-Router-DOM
+- react-hottoast
+- react-icons
+- SCSS
+
+## Deployment
+
+To see the live version please visit:
+
+https://test-y6oh.onrender.com/
+
+## Backend
+
+If you want to check out the backend repository, please visit:
+
+https://github.com/pozniej-znajde-wolne-haslo/bookstore_backend
+
+## Getting started
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/pozniej-znajde-wolne-haslo/booksy_frontend.git
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Start local backend server (see Backend repository)
+
+4. Start local development server
+
+```bash
+npm run dev
+```
+
+Booksy's frontend should be running on `http://localhost:5173`.
+
