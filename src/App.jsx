@@ -26,7 +26,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/books' element={<Books />}>
             <Route path='/books/genre/:genre' element={<Genre />} />
-            <Route path='/books/selection' element={<Selection />} />
+            <Route path='/books' element={<Selection />} />
             <Route path='/books/:title/:id' element={<SingleBook />} />
             <Route path='/books/request/:search' element={<SearchResult />} />
           </Route>
