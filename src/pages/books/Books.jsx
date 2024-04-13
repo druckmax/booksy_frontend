@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import SearchBar from '../../components/searchBar/SearchBar';
 import './_Books.scss';
@@ -7,6 +7,7 @@ import './_Books.scss';
 export default function Books() {
   const [genres, setGenres] = useState([]);
   const { hideUpdateDeleteBookForms } = useContext(Context);
+  const [isActiveGenre, setIsActiveGenre] = useState()
 
   useEffect(() => {
     async function getGenres() {
@@ -27,6 +28,11 @@ export default function Books() {
 
   const sortedGenres = genres.sort((a, b) => a.genre.localeCompare(b.genre));
 
+  const handleClick = (id) => {
+    setIsActiveGenre(id)
+    hideUpdateDeleteBookForms()
+  }
+
   return (
     <>
       <div className='search-genres-container'>
@@ -36,13 +42,14 @@ export default function Books() {
           {sortedGenres.map((genre) => {
             return (
               <h3 key={genre._id}>
-                <NavLink
+                <Link
                   to={`/books/genre/${genre.genre.split(' ').join('_')}`}
                   state={genre.genre}
-                  onClick={hideUpdateDeleteBookForms}
+                  onClick={handleClick(genre._id)}
+                  className={isActiveGenre === genre._id && "isGenreActive"}
                 >
                   {genre.genre}
-                </NavLink>
+                </Link>
               </h3>
             );
           })}
